@@ -1,0 +1,78 @@
+.game-over {
+  text-align: center;
+}
+
+.game-over-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FF6B6B;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.game-over-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.game-over-score {
+  font-size: 1.5rem;
+  color: #F7F7F7;
+}
+
+.best-score-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 107, 107, 0.05));
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.trophy-icon {
+  color: #FFD700;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.score-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.score-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #FF6B6B;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+
+.restart-button {
+  background: #FF6B6B;
+  color: #F7F7F7;
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.restart-button:hover {
+  background: #FF5252;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.2);
+}

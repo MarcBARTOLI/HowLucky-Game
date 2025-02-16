@@ -1,0 +1,10 @@
+.probability {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  color: #4ECDC4;
+  background: rgba(78, 205, 196, 0.1);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(78, 205, 196, 0.2);
+}

@@ -1,0 +1,52 @@
+.lives-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lives {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(231, 76, 60, 0.2);
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  position: relative;
+}
+
+.lives-count {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #E74C3C;
+}
+
+.life-gain-notification {
+  position: absolute;
+  right: calc(100% + 0.5rem);
+  background: #2ECC71;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-out 1.7s forwards;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
