@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { LevelBadge } from './components/LevelBadge/LevelBadge';
 import { LivesCounter } from './components/LivesCounter/LivesCounter';
 import { GameRules } from './components/GameRules/GameRules';
@@ -77,6 +77,14 @@ export default function App() {
     setTriedButtons([]);
   }, []);
 
+  const handleLevelUpAnimationEnd = () => {
+    setTriggerLevelUp(false);
+  };
+
+  const handleLifeGainAnimationEnd = () => {
+    setTriggerLifeGain(false);
+  };
+
   return (
     <>
       <GoogleAds />
@@ -94,10 +102,12 @@ export default function App() {
                 <LevelBadge
                   level={level}
                   triggerShowLevelUp={triggerShowLevelUp}
+                  onLevelUpAnimationEnd={handleLevelUpAnimationEnd}
                 />
                 <LivesCounter
                   lives={lives}
                   triggerShowLifeGain={triggerShowLifeGain}
+                  onLifeGainAnimationEnd={handleLifeGainAnimationEnd}
                 />
               </div>
 

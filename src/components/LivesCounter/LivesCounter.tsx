@@ -1,36 +1,25 @@
-import React, { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 import './LivesCounter.css';
 
 interface LivesCounterProps {
   lives: number;
   triggerShowLifeGain: boolean;
+  onLifeGainAnimationEnd: () => void;
 }
 
 export function LivesCounter({
   lives,
   triggerShowLifeGain,
+  onLifeGainAnimationEnd,
 }: LivesCounterProps) {
-  const [animationClass, setAnimationClass] = useState('');
-
-  useEffect(() => {
-    if (triggerShowLifeGain) {
-      setAnimationClass('life-gain-notification');
-    }
-  }, [triggerShowLifeGain]);
-
-  const handleAnimationEnd = () => {
-    setAnimationClass('');
-  };
-
   return (
     <div className="lives-container">
       {triggerShowLifeGain && (
         <div
-          className={`${animationClass}`}
-          onAnimationEnd={handleAnimationEnd}
+          className="life-gain-notification"
+          onAnimationEnd={onLifeGainAnimationEnd}
         >
-          +1 Life!
+          +1
         </div>
       )}
       <div className="lives">

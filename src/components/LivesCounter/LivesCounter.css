@@ -29,7 +29,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-weight: 600;
-  animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-out 1.7s forwards;
+  animation: fadeOut 0.2s ease-out 0.4s forwards;
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
 }
