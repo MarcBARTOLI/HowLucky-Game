@@ -6,6 +6,7 @@ import { GameOver } from './components/GameOver/GameOver';
 import { GameButtons } from './components/GameButtons/GameButtons';
 import { WinProbability } from './components/WinProbability/WinProbability';
 import { GoogleAds } from './components/GoogleAds/GoogleAds';
+import { GameTitle } from './components/GameTitle/GameTitle';
 import './App.css';
 
 function generateWinningButton(buttons: number) {
@@ -88,6 +89,7 @@ export default function App() {
   return (
     <>
       <GoogleAds />
+      <GameTitle />
       <div className="container">
         <div className="game-card">
           {gameOver ? (
