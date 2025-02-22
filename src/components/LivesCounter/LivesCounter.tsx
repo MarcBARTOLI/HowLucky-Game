@@ -1,24 +1,17 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
+import { useGame } from '../../context/GameContext';
 import './LivesCounter.css';
 
-interface LivesCounterProps {
-  lives: number;
-  triggerShowLifeGain: boolean;
-  onLifeGainAnimationEnd: () => void;
-}
+export function LivesCounter() {
+  const { lives, isLevelingUp, resetLevelUpAnimation } = useGame();
 
-export function LivesCounter({
-  lives,
-  triggerShowLifeGain,
-  onLifeGainAnimationEnd,
-}: LivesCounterProps) {
   return (
     <div className="lives-container">
-      {triggerShowLifeGain && (
+      {isLevelingUp && (
         <div
           className="life-gain-notification"
-          onAnimationEnd={onLifeGainAnimationEnd}
+          onAnimationEnd={resetLevelUpAnimation}
         >
           +1
         </div>

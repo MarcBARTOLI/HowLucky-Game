@@ -1,14 +1,11 @@
 import React from 'react';
 import { Trophy } from 'lucide-react';
+import { useGame } from '../../context/GameContext';
 import './GameOver.css';
 
-interface GameOverProps {
-  level: number;
-  highScore: number;
-  onRestart: () => void;
-}
+export function GameOver() {
+  const { level, highScore, resetGame } = useGame();
 
-export function GameOver({ level, highScore, onRestart }: GameOverProps) {
   return (
     <div className="game-over">
       <h1 className="game-over-title">Game Over!</h1>
@@ -23,7 +20,7 @@ export function GameOver({ level, highScore, onRestart }: GameOverProps) {
             <span className="score-number">{highScore}</span>
           </div>
         </div>
-        <button onClick={onRestart} className="restart-button">
+        <button onClick={resetGame} className="restart-button">
           Play Again
         </button>
       </div>

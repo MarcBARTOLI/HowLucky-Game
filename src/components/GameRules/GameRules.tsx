@@ -1,5 +1,7 @@
 import React from 'react';
 import { Info } from 'lucide-react';
+import { StorageService } from '../../services/storage';
+import { STORAGE_KEYS } from '../../config/gameConfig';
 import './GameRules.css';
 
 interface GameRulesProps {
@@ -7,6 +9,10 @@ interface GameRulesProps {
 }
 
 export function GameRules({ onClose }: GameRulesProps) {
+  React.useEffect(() => {
+    StorageService.set(STORAGE_KEYS.RULES_SHOWN, true);
+  }, []);
+
   return (
     <div className="rules">
       <div className="rules-header">

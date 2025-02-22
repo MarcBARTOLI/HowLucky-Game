@@ -1,34 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Crown } from 'lucide-react';
+import { useGame } from '../../context/GameContext';
 import './LevelBadge.css';
 
-interface LevelBadgeProps {
-  level: number;
-  triggerShowLevelUp: boolean;
-  onLevelUpAnimationEnd: () => void;
-}
-
-export function LevelBadge({
-   level,
-    triggerShowLevelUp,
-    onLevelUpAnimationEnd,
- }: LevelBadgeProps) {
+export function LevelBadge() {
   const [animationClass, setAnimationClass] = useState('');
+  const { level, isLevelingUp, resetLevelUpAnimation } = useGame();
 
   useEffect(() => {
-    if (triggerShowLevelUp) {
+    if (isLevelingUp) {
       setAnimationClass('level-up');
-    }
-    else {
+    } else {
       setAnimationClass('');
     }
-  }, [triggerShowLevelUp]);
+  }, [isLevelingUp]);
 
   return (
     <div
       className={`level-badge ${animationClass}`}
-      onAnimationEnd={onLevelUpAnimationEnd}
-      >
+      onAnimationEnd={resetLevelUpAnimation}
+    >
       <Crown size={24} className="crown-icon" />
       <div className="level-content">
         <span className="level-label">Level</span>

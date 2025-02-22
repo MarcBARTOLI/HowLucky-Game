@@ -1,23 +1,17 @@
 import React from 'react';
+import { useGame } from '../../context/GameContext';
 import './GameButtons.css';
 
-interface GameButtonsProps {
-  nBOfButtons: number;
-  triedButtons: number[];
-  onButtonClick: (index: number) => void;
-}
+export function GameButtons() {
+  const { level, triedButtons, handleButtonClick } = useGame();
+  const nBOfButtons = level + 1;
 
-export function GameButtons({
-  nBOfButtons,
-  triedButtons,
-  onButtonClick,
-}: GameButtonsProps) {
   return (
     <div className="buttons-grid">
       {Array.from({ length: nBOfButtons }).map((_, index) => (
         <button
           key={index}
-          onClick={() => onButtonClick(index)}
+          onClick={() => handleButtonClick(index)}
           disabled={triedButtons.includes(index)}
           className="game-button"
         >
